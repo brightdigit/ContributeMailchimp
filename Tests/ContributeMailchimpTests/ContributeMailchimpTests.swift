@@ -1,5 +1,5 @@
 //
-//  FrontMatter.swift
+//  ContributeMailchimpTests.swift
 //  BrightDigit
 //
 //  Created by Leo Dion.
@@ -27,23 +27,14 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-import Foundation
+import Testing
 
-#if canImport(FoundationNetworking)
-  import FoundationNetworking
-#endif
+@testable import ContributeMailchimp
 
-@available(*, deprecated, message: "Scheduled for removal; do not use in new code.")
-extension Newsletter {
-  /// The YAML front matter emitted for a newsletter issue.
-  public struct FrontMatter: Codable {
-    internal let issueNo: Int
-    internal let campaignID: String
-    internal let featuredImage: URL?
-    internal let longArchiveURL: URL
-    internal let newsletterTitle: String
-    internal let title: String
-    internal let date: String
-    internal let description: String?
+/// Placeholder suite so the package ships a test target; replace with real coverage.
+@Suite internal struct ContributeMailchimpTests {
+  /// Smoke test confirming the module links and the suite runs.
+  @Test internal func moduleLoads() {
+    #expect(Bool(true))
   }
 }
