@@ -73,7 +73,7 @@ extension Newsletter {
     from client: MailchimpClient,
     listID: String,
     selectingWith select:
-      @Sendable ([MailchimpCampaign]) throws -> [Source.Campaign],
+      @Sendable ([Spinetail.Campaign]) throws -> [Source.Campaign],
     processedWith htmlToMarkdown: @escaping @Sendable (String) throws -> String
   ) async throws -> [Source] {
     let campaigns = try await client.sentCampaigns(forListID: listID)
