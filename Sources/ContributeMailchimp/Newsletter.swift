@@ -1,6 +1,6 @@
 //
 //  Newsletter.swift
-//  BrightDigit
+//  ContributeMailchimp
 //
 //  Created by Leo Dion.
 //  Copyright © 2026 BrightDigit.
@@ -35,9 +35,13 @@ import Spinetail
 /// Mailchimp campaigns via the swift-openapi-generator async client.
 @available(*, deprecated, message: "Scheduled for removal; do not use in new code.")
 public enum Newsletter: ContentType {
+  /// A fully-resolved newsletter issue.
   public typealias SourceType = Source
+  /// The generator mapping an issue to its destination file URL.
   public typealias ContentURLGeneratorType = BasicContentURLGenerator
+  /// The extractor producing an issue's Markdown body.
   public typealias MarkdownExtractorType = MarkdownExtractor
+  /// The translator producing an issue's YAML front matter.
   public typealias FrontMatterTranslatorType = FrontMatterTranslator
 }
 

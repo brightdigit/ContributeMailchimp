@@ -1,6 +1,6 @@
 //
 //  Source.swift
-//  BrightDigit
+//  ContributeMailchimp
 //
 //  Created by Leo Dion.
 //  Copyright © 2026 BrightDigit.
@@ -39,16 +39,27 @@ extension Newsletter {
   /// A fully-resolved newsletter issue: the campaign metadata together with its
   /// rendered HTML and Markdown.
   public struct Source: Sendable {
+    /// The URL-safe slug used for the issue's file name.
     public let slug: String
+    /// The issue number assigned while selecting campaigns.
     public let issueNo: Int
+    /// The Mailchimp campaign identifier.
     public let campaignID: String
+    /// The public campaign-archive URL for the issue.
     public let longArchiveURL: URL
+    /// The image to feature for the issue, if the campaign has one.
     public let featuredImageURL: URL?
+    /// The campaign's internal title.
     public let title: String
+    /// The subject line the campaign was sent with.
     public let subjectLine: String
+    /// The campaign's preview text, unquoted and unescaped, if set.
     public let previewText: String?
+    /// The date and time the campaign was sent.
     public let sendTime: Date
+    /// The campaign's archive HTML, as fetched from Mailchimp.
     public let html: String
+    /// The issue body, converted from ``html`` to Markdown.
     public let markdown: String
 
     internal init(campaign: Campaign, html: String, markdown: String) {

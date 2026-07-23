@@ -1,6 +1,6 @@
 //
 //  MarkdownExtractor.swift
-//  BrightDigit
+//  ContributeMailchimp
 //
 //  Created by Leo Dion.
 //  Copyright © 2026 BrightDigit.
@@ -33,10 +33,18 @@ import Contribute
 extension Newsletter {
   /// Extracts the already-rendered Markdown body from a newsletter ``Source``.
   public struct MarkdownExtractor: Contribute.MarkdownExtractor {
+    /// The newsletter source this extractor reads.
     public typealias SourceType = Source
 
+    /// Creates an extractor.
     public init() {}
 
+    /// Returns the issue's Markdown body.
+    ///
+    /// The archive HTML is converted to Markdown when the source is built, so
+    /// the injected HTML-to-Markdown function is unused here.
+    ///
+    /// - Returns: The already-rendered Markdown body.
     public func markdown(
       from source: Newsletter.Source,
       using _: @escaping (String) throws -> String

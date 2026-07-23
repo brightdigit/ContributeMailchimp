@@ -1,6 +1,6 @@
 //
 //  FrontMatterTranslator.swift
-//  BrightDigit
+//  ContributeMailchimp
 //
 //  Created by Leo Dion.
 //  Copyright © 2026 BrightDigit.
@@ -37,11 +37,18 @@ import Contribute
 extension Newsletter {
   /// Translates a newsletter ``Source`` into its ``FrontMatter``.
   public struct FrontMatterTranslator: Contribute.FrontMatterTranslator {
+    /// The front matter emitted for a newsletter issue.
     public typealias FrontMatterType = FrontMatter
+    /// The newsletter source this translator reads.
     public typealias SourceType = Source
 
+    /// Creates a translator.
     public init() {}
 
+    /// Builds the front matter for a newsletter issue.
+    ///
+    /// - Parameter source: The newsletter source to translate.
+    /// - Returns: The front matter written above the issue's Markdown body.
     public func frontMatter(from source: Source) -> FrontMatter {
       FrontMatter(
         issueNo: source.issueNo,

@@ -1,6 +1,6 @@
 //
 //  FrontMatter.swift
-//  BrightDigit
+//  ContributeMailchimp
 //
 //  Created by Leo Dion.
 //  Copyright © 2026 BrightDigit.
