@@ -30,7 +30,6 @@
 import Contribute
 import Foundation
 
-@available(*, deprecated, message: "Scheduled for removal; do not use in new code.")
 extension Newsletter.Source {
   /// The metadata extracted from a Mailchimp campaign that identifies a
   /// newsletter issue.

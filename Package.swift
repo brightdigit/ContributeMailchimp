@@ -39,7 +39,12 @@ let package = Package(
     ),
     .testTarget(
       name: "ContributeMailchimpTests",
-      dependencies: ["ContributeMailchimp"]
+      dependencies: [
+        "ContributeMailchimp",
+        // The tests exercise the Contribute pipeline (YAML front-matter export,
+        // ContentType.write) that this package plugs into.
+        "Contribute"
+      ]
     )
   ]
 )

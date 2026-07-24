@@ -51,11 +51,11 @@ A campaign whose archive content is permanently unavailable — Mailchimp's stor
 a cached `503` — is logged to standard error and skipped, so one bad campaign never aborts the
 whole import.
 
-### Deprecation
+### Status
 
-Every symbol in this module is marked deprecated. The package exists to keep the `brightdigit.com`
-newsletter import building while its content pipeline is reworked, and it is scheduled for
-removal. Prefer building new importers directly against `Contribute` and `Spinetail`.
+This module is in active use: `brightdigit.com` imports its newsletter archive through it. It is
+supported and tested, not deprecated. Newer newsletter platforms are covered by their own
+adapters (for example `ContributeButtondown`); this one remains the Mailchimp adapter.
 
 ## Topics
 

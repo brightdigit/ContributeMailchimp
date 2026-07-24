@@ -37,12 +37,6 @@ fills in the Mailchimp-specific half:
 `brightdigit.com` uses it to import its newsletter archive alongside its podcast episodes and
 videos.
 
-> **Deprecated.** Every symbol in this module is annotated
-> `@available(*, deprecated, message: "Scheduled for removal; do not use in new code.")`. The
-> package exists to keep the `brightdigit.com` newsletter import building while that content
-> pipeline is reworked. For new work, model your own `ContentType` against `Contribute` and
-> `Spinetail` directly.
-
 ## Installation
 
 Add ContributeMailchimp to your `Package.swift`:

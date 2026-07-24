@@ -34,7 +34,6 @@ import Foundation
   import FoundationNetworking
 #endif
 
-@available(*, deprecated, message: "Scheduled for removal; do not use in new code.")
 extension Newsletter {
   /// A fully-resolved newsletter issue: the campaign metadata together with its
   /// rendered HTML and Markdown.

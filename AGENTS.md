@@ -20,9 +20,11 @@ concurrently and converts it to Markdown.
 
 Notes that matter when editing:
 
-- The entire public API is marked `@available(*, deprecated, message: "Scheduled for removal; do
-  not use in new code.")`. It exists to keep the brightdigit.com newsletter import building.
-  Do **not** remove the deprecation annotations; do not build new features on this API.
+- The public API is **not** deprecated. It used to carry a blanket
+  `@available(*, deprecated, …)`, which was removed: brightdigit.com imports its newsletter
+  archive through this package, so the API is in active use — and swift-testing refuses to apply
+  `@Suite`/`@Test` to deprecated declarations, which made the module untestable. Do not
+  reintroduce a blanket deprecation.
 - A single campaign whose archive content is unavailable (a cached 503 at Mailchimp's storage
   layer — brightdigit.com issue #108) is logged to stderr and skipped, never fatal. Preserve
   that behaviour.

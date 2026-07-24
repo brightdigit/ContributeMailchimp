@@ -17,15 +17,22 @@ pushed to this repository via `git subrepo push`.
   each campaign's archive HTML concurrently. A campaign whose archive content is permanently
   unavailable (cached 503, brightdigit.com issue #108) is logged to stderr and skipped rather
   than aborting the whole import.
-- The whole public API is annotated `@available(*, deprecated)` — it exists to keep the
-  brightdigit.com newsletter import building and is scheduled for removal.
+- The public API ships **without** deprecation annotations. An earlier draft marked every symbol
+  `@available(*, deprecated)`; that was removed because brightdigit.com imports its newsletter
+  archive through this package (so the API is in active use), and because swift-testing refuses
+  to apply `@Suite`/`@Test` to deprecated declarations, which left the module untestable.
 - Adopted the Spinetail 1.0.0 rename `MailchimpCampaign` → `Campaign`.
 - Package dependencies (`Contribute`, `Spinetail`) resolve from their GitHub repositories
   instead of the monorepo's relative `path:` entries, so the package builds standalone.
 
 ### Tests
 
-- `ContributeMailchimpTests` placeholder swift-testing suite so the package ships a test target.
+- `ContributeMailchimpTests` is a real swift-testing suite (5 suites, 17 tests): campaign →
+  `Newsletter.Source` mapping and preview-text normalization (trimming, unquoting, curly-apostrophe
+  fixing), the `FrontMatterTranslator` field mapping — including the `title`/`newsletterTitle`
+  crossover and the `yyyy-MM-dd HH:mm` send-time format — the `MarkdownExtractor` pass-through
+  (which must never re-invoke the HTML converter), the rendered YAML front matter (absent optionals
+  omitted), and writing issues to disk through Contribute's generic writer.
 
 ### CI
 

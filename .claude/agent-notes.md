@@ -15,3 +15,5 @@ rather than leaving both.
 <!-- Append directives below, one per line. Example:
 - Always run ./Scripts/lint.sh before committing; never call swiftlint directly.
 -->
+
+- Never mark this module's API `@available(*, deprecated, …)`: it is in active use by brightdigit.com, so it must stay testable (swift-testing rejects `@Suite`/`@Test` on deprecated declarations).
