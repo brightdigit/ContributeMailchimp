@@ -1,4 +1,4 @@
-![ContributeMailchimp Logo](Sources/ContributeMailchimp/ContributeMailchimp.docc/Resources/ContributeMailchimpLogo.png)
+![ContributeMailchimp Logo](Sources/ContributeMailchimp/ContributeMailchimp.docc/Resources/ContributeMailchimpLogo.svg)
 
 # ContributeMailchimp
 

@@ -4,6 +4,8 @@ Import Mailchimp campaigns into your static site as Markdown with YAML front mat
 
 ## Overview
 
+![Logo](ContributeMailchimpLogo.svg)
+
 `ContributeMailchimp` is the Mailchimp adapter for
 [Contribute](https://github.com/brightdigit/Contribute), the source-model-to-Markdown pipeline
 behind `brightdigit.com`. Contribute is deliberately source-agnostic: it defines the shape of an
