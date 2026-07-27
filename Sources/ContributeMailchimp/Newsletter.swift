@@ -86,10 +86,9 @@ extension Newsletter {
     ) { group in
       for campaign in selected {
         group.addTask {
+          let html: String
           do {
-            let html = try await client.archiveHTML(forCampaignID: campaign.campaignID)
-            let markdown = try htmlToMarkdown(html)
-            return .imported(Source(campaign: campaign, html: html, markdown: markdown))
+            html = try await client.archiveHTML(forCampaignID: campaign.campaignID)
           } catch {
             // #108: one campaign's archive content can be permanently
             // unavailable (cached 503). Skip it instead of aborting the import.
@@ -98,6 +97,8 @@ extension Newsletter {
               reason: String(describing: error)
             )
           }
+          let markdown = try htmlToMarkdown(html)
+          return .imported(Source(campaign: campaign, html: html, markdown: markdown))
         }
       }
       var collected: [CampaignOutcome] = []

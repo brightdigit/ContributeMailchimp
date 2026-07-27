@@ -133,7 +133,7 @@ featuredImage: https://mcusercontent.com/…/header.png
 longArchiveURL: https://us1.campaign-archive.com/?u=…&id=…
 newsletterTitle: Empower Apps Newsletter
 title: What's new in Swift 6.4
-date: 2026-06-29T12:00:00Z
+date: 2026-06-29 12:00
 description: A short preview line.
 ---
 
